@@ -1,0 +1,6 @@
+{
+  "title": "NexLink Bot API",
+  "description": "HTTP API for building bots on NexLink",
+  "language": "en",
+  "gitbook": ">=3.2.0"
+}
