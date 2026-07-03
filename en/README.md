@@ -82,8 +82,8 @@ The bot token is embedded in the URL path. No additional headers are needed for 
 
 ```
 /bot<token>/methodName
-     ^^^^^^
-     Your secret token
+    ^^^^^^^
+    Your secret token
 ```
 
 The token format is `<bot_id>:<secret>`, e.g. `bot_a1b2c3d4:random40hex`. Only the SHA-256 hash is stored server-side.

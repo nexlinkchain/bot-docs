@@ -82,8 +82,8 @@ curl -X POST https://api.nexlink.im/botbot_a1b2c3d4:c9d0e1f2.../sendMessage \
 
 ```
 /bot<token>/methodName
-     ^^^^^^
-     你的密钥令牌
+    ^^^^^^^
+    你的密钥令牌
 ```
 
 令牌格式为 `<bot_id>:<secret>`，例如 `bot_a1b2c3d4:random40hex`。服务端仅保存其 SHA-256 哈希。
