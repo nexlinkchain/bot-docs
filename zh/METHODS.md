@@ -11,6 +11,7 @@
 - [sendAudio](#sendaudio)
 - [sendVoice](#sendvoice)
 - [sendLocation](#sendlocation)
+- [sendChatAction](#sendchataction)
 - [forwardMessage](#forwardmessage)
 - [editMessageText](#editmessagetext)
 - [deleteMessage](#deletemessage)
@@ -248,6 +249,33 @@ Content-Type: application/json
 | `reply_markup` | [InlineKeyboardMarkup](TYPES.md#inlinekeyboardmarkup) | 否 | 内联键盘 |
 
 **返回：** [Message](TYPES.md#message)
+
+---
+
+## sendChatAction
+
+告知用户机器人正在处理中——客户端会在聊天页顶部显示"正在输入..."状态。当请求需要较长时间处理时，在实际回复之前调用此方法。
+
+该状态仅在线推送（不会存储），约 6 秒后自动消失，或在机器人发出消息时立即消失（以先到者为准）。耗时较长的操作可再次调用以刷新状态。
+
+**参数：**
+
+| 字段 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| `chat_id` | String | 是 | 目标会话 ID（用户 ID） |
+| `action` | String | 是 | 动作类型：`typing`、`upload_photo`、`record_video`、`upload_video`、`record_voice`、`upload_voice`、`upload_document`、`choose_sticker`、`find_location`。当前所有动作均显示为"正在输入..." |
+
+**返回：** 成功时返回 `true`。
+
+```bash
+POST /bot<token>/sendChatAction
+Content-Type: application/json
+
+{
+  "chat_id": "5168018091",
+  "action": "typing"
+}
+```
 
 ---
 

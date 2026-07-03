@@ -316,3 +316,24 @@ POST /bots/commands
   ]
 }
 ```
+
+---
+
+## Deep Linking
+
+Every bot is addressable by URL — NexLink's equivalent of Telegram's `t.me/bot?start=` links:
+
+```
+https://{web-domain}/bot/{bot_id}?start={payload}
+nexlink://bot?id={bot_id}&start={payload}
+```
+
+Opening either link takes the user straight to the bot's chat. When a `start` payload is present, the client shows a **Start** button (even if the chat already has history); pressing it sends `/start {payload}` — so the payload is only delivered with the user's consent, exactly like Telegram.
+
+The bot receives it as a plain text message:
+
+```json
+{"message": {"text": "/start ref_711", "from": {"id": "5168018091"}, ...}}
+```
+
+Use the payload for referral tracking, account linking (put a one-time token in it), or jumping to specific content. The payload should be URL-safe; keep it under 64 characters.

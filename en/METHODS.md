@@ -11,6 +11,7 @@ All methods are invoked via **HTTP POST** to `https://<your-nexlink-api-host>/bo
 - [sendAudio](#sendaudio)
 - [sendVoice](#sendvoice)
 - [sendLocation](#sendlocation)
+- [sendChatAction](#sendchataction)
 - [forwardMessage](#forwardmessage)
 - [editMessageText](#editmessagetext)
 - [deleteMessage](#deletemessage)
@@ -248,6 +249,33 @@ Sends a point on the map.
 | `reply_markup` | [InlineKeyboardMarkup](TYPES.md#inlinekeyboardmarkup) | No | Inline keyboard |
 
 **Returns:** [Message](TYPES.md#message)
+
+---
+
+## sendChatAction
+
+Tells the user that something is happening on the bot's side — the client shows a "Typing..." status in the chat header. Use while a request takes a noticeable time to process, right before the actual reply.
+
+The status is delivered online-only (nothing is stored) and clears automatically after ~6 seconds or as soon as the bot sends a message — whichever comes first. Refresh it by calling the method again for longer operations.
+
+**Parameters:**
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `chat_id` | String | Yes | Target chat ID (a user's ID) |
+| `action` | String | Yes | Type of action: `typing`, `upload_photo`, `record_video`, `upload_video`, `record_voice`, `upload_voice`, `upload_document`, `choose_sticker`, `find_location`. All actions currently render as "Typing..." |
+
+**Returns:** `true` on success.
+
+```bash
+POST /bot<token>/sendChatAction
+Content-Type: application/json
+
+{
+  "chat_id": "5168018091",
+  "action": "typing"
+}
+```
 
 ---
 
