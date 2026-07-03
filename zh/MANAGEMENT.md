@@ -240,6 +240,31 @@ POST /bot_mgmt/callback_query
 }
 ```
 
+### Get Callback Answer
+
+机器人 [answerCallbackQuery](METHODS.md#answercallbackquery) 应答的轮询兜底端点。应答通常会通过 socket 实时推送给客户端；此端点仅供错过推送的客户端使用。
+
+```
+POST /bot_mgmt/callback_answer
+```
+
+| 字段 | 类型 | 必填 | 说明 |
+|------|------|------|------|
+| `queryId` | String | 是 | [Submit Callback Query](#submit-callback-query) 返回的 `queryId` |
+
+**响应：**
+
+```json
+{
+  "errCode": 0,
+  "data": {
+    "answered": true,
+    "text": "Item deleted!",
+    "showAlert": false
+  }
+}
+```
+
 ---
 
 ## 机器人发现 API

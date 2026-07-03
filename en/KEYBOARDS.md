@@ -1,6 +1,6 @@
 # Inline Keyboards
 
-Inline keyboards are displayed below messages. Each button can either open a URL or send a callback query to your bot. Attach one via the `reply_markup` field on [sendMessage](METHODS.md#sendmessage) and the other send methods. See the [InlineKeyboardMarkup](TYPES.md#inlinekeyboardmarkup) and [InlineKeyboardButton](TYPES.md#inlinekeyboardbutton) types.
+Inline keyboards are displayed below messages. Each button can open a URL, send a callback query to your bot, or launch a [Web App](#example-web-app-button). Attach one via the `reply_markup` field on [sendMessage](METHODS.md#sendmessage) and the other send methods. See the [InlineKeyboardMarkup](TYPES.md#inlinekeyboardmarkup) and [InlineKeyboardButton](TYPES.md#inlinekeyboardbutton) types.
 
 ---
 
@@ -39,6 +39,22 @@ Inline keyboards are displayed below messages. Each button can either open a URL
 }
 ```
 
+## Example: Web App Button
+
+A `web_app` button opens the URL inside NexLink's in-app dApp browser with the `NexlinkApp` SDK injected — the NexLink equivalent of a Telegram Web App (mini-app). No callback query is generated; the interaction continues inside the Web App.
+
+```json
+{
+  "reply_markup": {
+    "inline_keyboard": [
+      [
+        {"text": "Open Shop", "web_app": {"url": "https://shop.example.com"}}
+      ]
+    ]
+  }
+}
+```
+
 ## How Callback Buttons Work
 
 ```
@@ -60,4 +76,4 @@ Bot calls POST /bot<token>/answerCallbackQuery
   { callback_query_id: "...", text: "Item deleted!" }
 ```
 
-After receiving a [CallbackQuery](TYPES.md#callbackquery), your bot should call [answerCallbackQuery](METHODS.md#answercallbackquery) to acknowledge it.
+After receiving a [CallbackQuery](TYPES.md#callbackquery), your bot should call [answerCallbackQuery](METHODS.md#answercallbackquery) to acknowledge it. The answer is pushed to the user in real time over the socket and shown as a toast (or an alert when `show_alert` is set); if the user has gone offline in the meantime it is simply not displayed.

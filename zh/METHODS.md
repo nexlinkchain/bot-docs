@@ -335,7 +335,7 @@ Content-Type: application/json
 
 ## answerCallbackQuery
 
-对来自[内联键盘](TYPES.md#inlinekeyboardbutton)的回调查询作出应答。应答会以聊天界面顶部的通知或弹窗形式展示给用户。
+对来自[内联键盘](TYPES.md#inlinekeyboardbutton)的回调查询作出应答。应答会实时推送给用户，以聊天界面顶部的通知或弹窗形式展示。仅在线投递：若用户已离线，应答不会在之后补显。
 
 **参数：**
 

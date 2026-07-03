@@ -335,7 +335,7 @@ Deletes (revokes) a message the bot sent.
 
 ## answerCallbackQuery
 
-Sends an answer to a callback query sent from an [inline keyboard](TYPES.md#inlinekeyboardbutton). The answer will be displayed to the user as a notification at the top of the chat screen or as an alert.
+Sends an answer to a callback query sent from an [inline keyboard](TYPES.md#inlinekeyboardbutton). The answer is pushed to the user in real time and displayed as a notification at the top of the chat screen or as an alert. Delivery is online-only: if the user has gone offline, the answer is not shown later.
 
 **Parameters:**
 

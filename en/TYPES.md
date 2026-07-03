@@ -15,6 +15,7 @@ Object definitions used across the Bot API — in method parameters, responses, 
 - [Update](#update)
 - [InlineKeyboardMarkup](#inlinekeyboardmarkup)
 - [InlineKeyboardButton](#inlinekeyboardbutton)
+- [WebAppInfo](#webappinfo)
 - [BotCommand](#botcommand)
 - [WebhookInfo](#webhookinfo)
 
@@ -144,15 +145,24 @@ Represents an inline keyboard that appears right below the message.
 
 ## InlineKeyboardButton
 
-Represents one button of an inline keyboard. Exactly one of `callback_data` or `url` must be specified.
+Represents one button of an inline keyboard. Exactly one of `callback_data`, `url`, or `web_app` must be specified.
 
 | Field | Type | Description |
 |-------|------|-------------|
 | `text` | String | Label text on the button |
 | `callback_data` | String | *Optional.* Data sent in a [CallbackQuery](#callbackquery) when the button is pressed (1-256 characters) |
 | `url` | String | *Optional.* HTTP/HTTPS URL to be opened when button is pressed |
+| `web_app` | [WebAppInfo](#webappinfo) | *Optional.* Web App launched when the button is pressed |
 
 See [Inline Keyboards](KEYBOARDS.md) for usage examples and the callback flow.
+
+## WebAppInfo
+
+Describes a Web App (mini-app). NexLink opens it inside the app's dApp browser with the `NexlinkApp` SDK injected — the NexLink equivalent of a Telegram Web App.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| `url` | String | HTTPS URL of the Web App to open |
 
 ## BotCommand
 

@@ -240,6 +240,31 @@ POST /bot_mgmt/callback_query
 }
 ```
 
+### Get Callback Answer
+
+Poll fallback for the bot's [answerCallbackQuery](METHODS.md#answercallbackquery) response. The answer is normally pushed to the client in real time over the socket; this endpoint exists only for clients that missed the push.
+
+```
+POST /bot_mgmt/callback_answer
+```
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `queryId` | String | Yes | `queryId` returned by [Submit Callback Query](#submit-callback-query) |
+
+**Response:**
+
+```json
+{
+  "errCode": 0,
+  "data": {
+    "answered": true,
+    "text": "Item deleted!",
+    "showAlert": false
+  }
+}
+```
+
 ---
 
 ## Bot Discovery API

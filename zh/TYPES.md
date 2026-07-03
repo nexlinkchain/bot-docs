@@ -15,6 +15,7 @@
 - [Update](#update)
 - [InlineKeyboardMarkup](#inlinekeyboardmarkup)
 - [InlineKeyboardButton](#inlinekeyboardbutton)
+- [WebAppInfo](#webappinfo)
 - [BotCommand](#botcommand)
 - [WebhookInfo](#webhookinfo)
 
@@ -144,15 +145,24 @@
 
 ## InlineKeyboardButton
 
-表示内联键盘上的一个按钮。`callback_data` 和 `url` 必须且只能指定其一。
+表示内联键盘上的一个按钮。`callback_data`、`url`、`web_app` 必须且只能指定其一。
 
 | 字段 | 类型 | 说明 |
 |------|------|------|
 | `text` | String | 按钮上的文字 |
 | `callback_data` | String | *可选。* 按钮被按下时在 [CallbackQuery](#callbackquery) 中发送的数据（1-256 个字符） |
 | `url` | String | *可选。* 按钮被按下时打开的 HTTP/HTTPS URL |
+| `web_app` | [WebAppInfo](#webappinfo) | *可选。* 按钮被按下时启动的 Web App |
 
 用法示例与回调流程参见[内联键盘](KEYBOARDS.md)。
+
+## WebAppInfo
+
+描述一个 Web App（小程序）。NexLink 会在应用内的 dApp 浏览器中打开它并注入 `NexlinkApp` SDK——相当于 Telegram 的 Web App。
+
+| 字段 | 类型 | 说明 |
+|------|------|------|
+| `url` | String | 要打开的 Web App 的 HTTPS URL |
 
 ## BotCommand
 
