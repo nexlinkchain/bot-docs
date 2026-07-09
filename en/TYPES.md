@@ -59,6 +59,7 @@ Represents a message.
 | `document` | [Document](#document) | *Optional.* Available if the message is a document |
 | `voice` | [Voice](#voice) | *Optional.* Available if the message is a voice/audio message |
 | `location` | [Location](#location) | *Optional.* Available if the message is a location |
+| `reply_to_message` | [Message](#message) | *Optional.* For replies, the original message being quoted. Exposed one level deep: it will not contain a further `reply_to_message` even if it is itself a reply |
 | `reply_markup` | [InlineKeyboardMarkup](#inlinekeyboardmarkup) | *Optional.* Inline keyboard attached to the message |
 
 ## PhotoSize
@@ -108,9 +109,10 @@ Represents a special entity in a text message (e.g., a bot command).
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `type` | String | Type of the entity. Currently supported: `"bot_command"` |
+| `type` | String | Type of the entity. Currently supported: `"bot_command"`, `"text_mention"` (an `@` mention in a group message) |
 | `offset` | Integer | Offset in UTF-16 code units to the start of the entity |
 | `length` | Integer | Length of the entity in UTF-16 code units |
+| `user` | [User](#user) | *Optional.* The mentioned user, present for `"text_mention"`. `first_name` carries the user's group nickname |
 
 ## CallbackQuery
 

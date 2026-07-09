@@ -59,6 +59,7 @@
 | `document` | [Document](#document) | *可选。* 当消息为文档时存在 |
 | `voice` | [Voice](#voice) | *可选。* 当消息为语音/音频时存在 |
 | `location` | [Location](#location) | *可选。* 当消息为位置时存在 |
+| `reply_to_message` | [Message](#message) | *可选。* 回复消息时，被引用的原始消息。仅展开一层：即使原始消息本身也是回复，也不会再包含 `reply_to_message` |
 | `reply_markup` | [InlineKeyboardMarkup](#inlinekeyboardmarkup) | *可选。* 附加到消息的内联键盘 |
 
 ## PhotoSize
@@ -108,9 +109,10 @@
 
 | 字段 | 类型 | 说明 |
 |------|------|------|
-| `type` | String | 实体类型。当前支持：`"bot_command"` |
+| `type` | String | 实体类型。当前支持：`"bot_command"`、`"text_mention"`（群消息中的 `@` 提及） |
 | `offset` | Integer | 实体起点的偏移量（以 UTF-16 码元计） |
 | `length` | Integer | 实体长度（以 UTF-16 码元计） |
+| `user` | [User](#user) | *可选。* 被提及的用户，`"text_mention"` 时存在。`first_name` 为该用户的群昵称 |
 
 ## CallbackQuery
 
