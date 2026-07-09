@@ -41,7 +41,7 @@ Inline keyboards are displayed below messages. Each button can open a URL, send 
 
 ## Example: Web App Button
 
-A `web_app` button opens the URL inside NexLink's in-app dApp browser with the `NexlinkApp` SDK injected — the NexLink equivalent of a Telegram Web App (mini-app). No callback query is generated; the interaction continues inside the Web App.
+A `web_app` button opens the URL inside NexLink's in-app dApp browser with the `NexlinkApp` SDK injected. No callback query is generated; the interaction continues inside the Web App.
 
 ```json
 {

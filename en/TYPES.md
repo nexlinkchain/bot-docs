@@ -160,7 +160,7 @@ See [Inline Keyboards](KEYBOARDS.md) for usage examples and the callback flow.
 
 ## WebAppInfo
 
-Describes a Web App (mini-app). NexLink opens it inside the app's dApp browser with the `NexlinkApp` SDK injected — the NexLink equivalent of a Telegram Web App.
+Describes a Web App (mini-app). NexLink opens it inside the app's dApp browser with the `NexlinkApp` SDK injected.
 
 | Field | Type | Description |
 |-------|------|-------------|

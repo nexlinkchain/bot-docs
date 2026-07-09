@@ -160,7 +160,7 @@
 
 ## WebAppInfo
 
-描述一个 Web App（小程序）。NexLink 会在应用内的 dApp 浏览器中打开它并注入 `NexlinkApp` SDK——相当于 Telegram 的 Web App。
+描述一个 Web App（小程序）。NexLink 会在应用内的 dApp 浏览器中打开它并注入 `NexlinkApp` SDK。
 
 | 字段 | 类型 | 说明 |
 |------|------|------|

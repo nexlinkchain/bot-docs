@@ -41,7 +41,7 @@
 
 ## 示例：Web App 按钮
 
-`web_app` 按钮会在 NexLink 应用内的 dApp 浏览器中打开该 URL 并注入 `NexlinkApp` SDK——相当于 Telegram 的 Web App（小程序）。不会产生回调查询；后续交互在 Web App 内部完成。
+`web_app` 按钮会在 NexLink 应用内的 dApp 浏览器中打开该 URL 并注入 `NexlinkApp` SDK。不会产生回调查询；后续交互在 Web App 内部完成。
 
 ```json
 {

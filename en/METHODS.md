@@ -281,7 +281,7 @@ Content-Type: application/json
 
 ## forwardMessage
 
-Copies the content of a message the bot previously sent or received into another chat. Uses copy semantics (no "forwarded from" header), mirroring Telegram's behavior. Only messages the bot has a record of can be forwarded.
+Copies the content of a message the bot previously sent or received into another chat. Uses copy semantics (no "forwarded from" header). Only messages the bot has a record of can be forwarded.
 
 **Parameters:**
 

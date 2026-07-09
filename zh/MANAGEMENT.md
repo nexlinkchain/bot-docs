@@ -346,14 +346,14 @@ POST /bots/commands
 
 ## 深度链接
 
-每个机器人都可以通过 URL 直达——相当于 Telegram 的 `t.me/bot?start=` 链接：
+每个机器人都可以通过 URL 直达：
 
 ```
 https://{web-domain}/bot/{bot_id}?start={payload}
 nexlink://bot?id={bot_id}&start={payload}
 ```
 
-打开任一链接会直接进入机器人聊天页。当链接带有 `start` 参数时，客户端会显示 **Start** 按钮（即使聊天已有历史记录）；用户点击后发送 `/start {payload}`——payload 仅在用户确认后才会送达，与 Telegram 行为一致。
+打开任一链接会直接进入机器人聊天页。当链接带有 `start` 参数时，客户端会显示 **Start** 按钮（即使聊天已有历史记录）；用户点击后发送 `/start {payload}`——payload 仅在用户确认后才会送达。
 
 机器人以普通文本消息收到它：
 
