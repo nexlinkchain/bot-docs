@@ -112,6 +112,7 @@ Sends a text message.
 |-------|------|----------|-------------|
 | `chat_id` | String | Yes | Unique identifier for the target chat (OpenIM userID or groupID) |
 | `text` | String | Yes | Text of the message, 1-4096 characters |
+| `parse_mode` | String | No | Set to `Markdown` to parse `**bold**`, `__italic__`, `~~strike~~`, `||spoiler||`, `` `code` ``, ```` ```pre``` ````, `[text](url)` into formatting |
 | `reply_markup` | [InlineKeyboardMarkup](TYPES.md#inlinekeyboardmarkup) | No | Inline keyboard attached to the message |
 
 **Returns:** [Message](TYPES.md#message)
@@ -161,6 +162,7 @@ Sends a photo.
 | `chat_id` | String | Yes | Target chat ID |
 | `url` | String | Yes | URL of the photo |
 | `caption` | String | No | Photo caption, 0-1024 characters |
+| `parse_mode` | String | No | Set to `Markdown` to parse formatting markers in the caption |
 | `reply_markup` | [InlineKeyboardMarkup](TYPES.md#inlinekeyboardmarkup) | No | Inline keyboard |
 
 **Returns:** [Message](TYPES.md#message)
@@ -308,6 +310,7 @@ Edits the text of a message the bot sent. OpenIM has no in-place edit, so the or
 | `chat_id` | String | No | Target chat (informational) |
 | `message_id` | String | Yes | `message_id` of the bot's own message to edit |
 | `text` | String | Yes | New text, 1-4096 characters |
+| `parse_mode` | String | No | Set to `Markdown` to parse formatting markers |
 | `reply_markup` | [InlineKeyboardMarkup](TYPES.md#inlinekeyboardmarkup) | No | New inline keyboard |
 
 **Returns:** [Message](TYPES.md#message) — with a **new** `message_id`.

@@ -112,6 +112,7 @@ Content-Type: application/json
 |------|------|------|------|
 | `chat_id` | String | 是 | 目标会话的唯一标识（OpenIM userID 或 groupID） |
 | `text` | String | 是 | 消息文本，1-4096 个字符 |
+| `parse_mode` | String | 否 | 设为 `Markdown` 时解析 `**粗体**`、`__斜体__`、`~~删除线~~`、`||遮罩||`、`` `代码` ``、```` ```代码块``` ````、`[文字](链接)` 为富文本 |
 | `reply_markup` | [InlineKeyboardMarkup](TYPES.md#inlinekeyboardmarkup) | 否 | 附加到消息的内联键盘 |
 
 **返回：** [Message](TYPES.md#message)
@@ -161,6 +162,7 @@ Content-Type: application/json
 | `chat_id` | String | 是 | 目标会话 ID |
 | `url` | String | 是 | 图片 URL |
 | `caption` | String | 否 | 图片说明，0-1024 个字符 |
+| `parse_mode` | String | 否 | 设为 `Markdown` 时解析说明中的格式标记 |
 | `reply_markup` | [InlineKeyboardMarkup](TYPES.md#inlinekeyboardmarkup) | 否 | 内联键盘 |
 
 **返回：** [Message](TYPES.md#message)
@@ -308,6 +310,7 @@ Content-Type: application/json
 | `chat_id` | String | 否 | 目标会话（仅供参考） |
 | `message_id` | String | 是 | 机器人自己要编辑的消息的 `message_id` |
 | `text` | String | 是 | 新文本，1-4096 个字符 |
+| `parse_mode` | String | 否 | 设为 `Markdown` 时解析格式标记 |
 | `reply_markup` | [InlineKeyboardMarkup](TYPES.md#inlinekeyboardmarkup) | 否 | 新的内联键盘 |
 
 **返回：** [Message](TYPES.md#message) —— 带有**新的** `message_id`。
