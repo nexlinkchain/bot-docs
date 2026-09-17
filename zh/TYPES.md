@@ -71,6 +71,7 @@
 | `file_id` | String | 文件标识 / URL |
 | `width` | Integer | *可选。* 图片宽度 |
 | `height` | Integer | *可选。* 图片高度 |
+| `enc` | Object | *可选。* 加密文件的密钥（不透明）。转发该文件时以 `enc` 原样传回，否则客户端无法解密 |
 
 ## Video
 
@@ -80,6 +81,9 @@
 | `duration` | Integer | *可选。* 时长（秒） |
 | `width` | Integer | *可选。* 视频宽度 |
 | `height` | Integer | *可选。* 视频高度 |
+| `cover` | String | *可选。* 封面缩略图 URL |
+| `enc` | Object | *可选。* 加密视频的密钥（不透明），转发时以 `enc` 传回 |
+| `cover_enc` | Object | *可选。* 加密封面的密钥，转发时以 `thumb_enc`（sendVideo）或 `cover_enc`（相册项）传回 |
 
 ## Document
 
@@ -88,6 +92,7 @@
 | `file_id` | String | 文件标识 / URL |
 | `file_name` | String | *可选。* 原始文件名 |
 | `file_size` | Integer | *可选。* 文件大小（字节） |
+| `enc` | Object | *可选。* 加密文件的密钥（不透明），转发时以 `enc` 传回 |
 
 ## Voice
 
@@ -95,6 +100,7 @@
 |------|------|------|
 | `file_id` | String | 文件标识 / URL |
 | `duration` | Integer | *可选。* 时长（秒） |
+| `enc` | Object | *可选。* 加密语音的密钥（不透明），转发时以 `enc` 传回 |
 
 ## Location
 

@@ -150,6 +150,8 @@ Content-Type: application/json
 > | `thumb_url` | String | 缩略图 URL（视频） |
 > | `thumb_width` | Integer | 缩略图宽度，像素 |
 > | `thumb_height` | Integer | 缩略图高度，像素 |
+> | `enc` | Object | 加密文件的密钥，即收到消息里的 `enc`（不透明，转发该文件时原样传回，否则客户端无法解密） |
+> | `thumb_enc` | Object | 缩略图（视频封面）的密钥，即收到消息里的 `cover_enc` |
 
 ## sendPhoto
 

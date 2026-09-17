@@ -150,6 +150,8 @@ Content-Type: application/json
 > | `thumb_url` | String | Thumbnail URL (video) |
 > | `thumb_width` | Integer | Thumbnail width in pixels |
 > | `thumb_height` | Integer | Thumbnail height in pixels |
+> | `enc` | Object | Key of an encrypted file, exactly as received in an incoming message's `enc` (opaque; pass it back verbatim when re-sending that file, or no client can decrypt it) |
+> | `thumb_enc` | Object | Key of the thumbnail (video), from the incoming `cover_enc` |
 
 ## sendPhoto
 

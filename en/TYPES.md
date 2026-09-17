@@ -71,6 +71,7 @@ Represents one size of a photo.
 | `file_id` | String | Identifier / URL for the file |
 | `width` | Integer | *Optional.* Photo width |
 | `height` | Integer | *Optional.* Photo height |
+| `enc` | Object | *Optional.* Key of an encrypted file (opaque). Pass it back as `enc` when re-sending the file, or no client can decrypt it |
 
 ## Video
 
@@ -80,6 +81,9 @@ Represents one size of a photo.
 | `duration` | Integer | *Optional.* Duration in seconds |
 | `width` | Integer | *Optional.* Video width |
 | `height` | Integer | *Optional.* Video height |
+| `cover` | String | *Optional.* Thumbnail URL |
+| `enc` | Object | *Optional.* Key of an encrypted video (opaque); pass back as `enc` when re-sending |
+| `cover_enc` | Object | *Optional.* Key of the encrypted thumbnail; pass back as `thumb_enc` (sendVideo) or `cover_enc` (album items) |
 
 ## Document
 
@@ -88,6 +92,7 @@ Represents one size of a photo.
 | `file_id` | String | Identifier / URL for the file |
 | `file_name` | String | *Optional.* Original filename |
 | `file_size` | Integer | *Optional.* File size in bytes |
+| `enc` | Object | *Optional.* Key of an encrypted file (opaque); pass back as `enc` when re-sending |
 
 ## Voice
 
@@ -95,6 +100,7 @@ Represents one size of a photo.
 |-------|------|-------------|
 | `file_id` | String | Identifier / URL for the file |
 | `duration` | Integer | *Optional.* Duration in seconds |
+| `enc` | Object | *Optional.* Key of an encrypted voice file (opaque); pass back as `enc` when re-sending |
 
 ## Location
 
